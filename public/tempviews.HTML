@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display and Download Images</title>
+</head>
+<body>
+  <h2>Image Display:</h2>
+  <img id="imageDisplay" src="/images/660f9a7c45ea54432f1f565d" alt="Image Display" style="max-width: 500px;">
+
+  <h2>Image Download:</h2>
+  <a href="/images/660f9a7c45ea54432f1f565d" download="image.jpg">Download Image</a>
+</body>
+</html>
+<!-- src Attribute: The src attribute of the <img> tag specifies the URL of the image to display. In your case, it's set to /images/660f88a7fc50fc66cfcbc6a1, which is the route where your server serves the image with the ID 660f88a7fc50fc66cfcbc6a1.
+
+href Attribute: The href attribute of the <a> tag specifies the URL of the resource to download. It's set to the same URL as the image, /images/660f88a7fc50fc66cfcbc6a1, which allows users to download the image by clicking on the link.
+
+download Attribute: The download attribute of the <a> tag specifies the filename that the downloaded file should have. In your case, it's set to image.jpg, so when the user downloads the image, it will be saved as image.jpg on their device. -->
+<!-- ------------------------------------------------------------- -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display and Download Images</title>
+</head>
+<body>
+  <h2>All Images:</h2>
+  <div id="imageContainer"></div>
+
+  <script>
+    // Fetch all images from the server
+    fetch('/allImages')
+      .then(response => response.json())
+      .then(images => {
+        const imageContainer = document.getElementById('imageContainer');
+
+        // Loop through all images and create image elements
+        images.forEach(image => {
+          const img = document.createElement('img');
+          img.src = `/images/${image._id}`; // Use image ID in the URL
+          img.alt = 'Image';
+          img.style.maxWidth = '500px';
+
+          // Create download link for each image
+          const downloadLink = document.createElement('a');
+          downloadLink.href = `/images/${image._id}`;
+          downloadLink.download = image.filename;
+          downloadLink.innerText = 'Download Image';
+
+          // Append image and download link to the container
+          imageContainer.appendChild(img);
+          imageContainer.appendChild(downloadLink);
+          imageContainer.appendChild(document.createElement('br'));
+        });
+      })
+      .catch(error => console.error('Error fetching images:', error));
+  </script>
+</body>
+</html> -->
