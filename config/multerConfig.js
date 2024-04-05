@@ -37,7 +37,7 @@
 
 // module.exports = upload;
 
-//-----------------------------------------------
+//----------------------------------------------- single file
 const multer = require('multer');
 
 // Configure multer to store files in memory
@@ -47,3 +47,19 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 module.exports = upload;
+
+
+//-------------------------------------------------multiple file
+
+// const multer = require('multer');
+
+// // Configure multer to store files in memory
+// const storage = multer.memoryStorage();
+
+// // Initialize multer with the configured storage for multiple file uploads
+// const upload = multer({
+//   storage: storage,
+//   limits: { fileSize: 1000000 }, // Limit file size to 1MB (optional)
+// }).array('images', 5); // 'images' is the field name in the form data, 5 is the maximum number of files
+
+// module.exports = upload;
