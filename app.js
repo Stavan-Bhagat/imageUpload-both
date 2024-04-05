@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Connect to MongoDB
+
 connectToMongoDB().catch(console.error);
 
 // Routes
@@ -32,12 +32,11 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something went wrong!");
 });
 
-// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}/`);
 });
 
-// Close MongoDB connection when the app exits
+
 process.on("SIGINT", () => {
   closeMongoDBConnection().then(() => {
     console.log("MongoDB connection closed");

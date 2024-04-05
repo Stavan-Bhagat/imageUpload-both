@@ -8,7 +8,9 @@ let isConnected = false;
 
 async function connectToMongoDB() {
   try {
+  
     if (!isConnected) {
+  
       await mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
